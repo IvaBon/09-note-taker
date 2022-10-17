@@ -52,8 +52,9 @@ app.delete('/api/notes/:id',(req,res)=>{
 
     fs.readFile(("./db/db.json"),"utf-8",function(err){
         err? console.log(err) : console.log('succes')
-
-        const remove=need.filter(newNote=>newNote.id!==req.params.id)
+        
+   
+        const remove=need.filter(task=>task.id!==req.params.id)
 
         fs.writeFile('./db/db.json',JSON.stringify(remove),(err)=>{
             if(err){
@@ -63,8 +64,8 @@ app.delete('/api/notes/:id',(req,res)=>{
             }
         })
     
-            
-    });
+    });      
+   
 
    
 })

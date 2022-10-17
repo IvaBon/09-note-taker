@@ -11,6 +11,6 @@ saved notes to view the note. Once you are done with a certain note you can dele
 
 ## Screenshot 
 
-![screenshot of webpage](../../../Downloads/09-note-taker-production.up.railway.app_.png)
+![screenshot of webpage](./helpers/09-note-taker-production.up.railway.app_.png)
 
 
