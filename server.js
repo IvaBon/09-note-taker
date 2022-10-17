@@ -48,20 +48,26 @@ app.post('/api/notes',(req,res)=>{
     }
 })
 // trying to dealth the data
-// app.delete('/api/notes/:id',(req,res)=>{
+app.delete('/api/notes/:id',(req,res)=>{
 
-//     fs.readFile(path.join(__dirname,"/db/db.json"),"utf-8",function(err){
-//         err? console.log(err) : console.log('succes')
+    fs.readFile(("./db/db.json"),"utf-8",function(err){
+        err? console.log(err) : console.log('succes')
 
-//         const remove=JSON.parse(need).filter(newNote=>newNote.id!==req.params.id)
-//         fs.writeFile(path.join(__dirname,'/db/db.json'),JSON.stringify(remove),function(err){
-//             err? console.log(err) : console.log('succes')
-//         });
+        const remove=need.filter(newNote=>newNote.id!==req.params.id)
+
+        fs.writeFile('./db/db.json',JSON.stringify(remove),(err)=>{
+            if(err){
+                res.status(400).json({msg:'error'})
+            } else{
+                res.status(200).json({msg:'success'})
+            }
+        })
+    
             
-//     });
+    });
 
    
-// })
+})
 
 
 
