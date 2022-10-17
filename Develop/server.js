@@ -6,7 +6,7 @@ const fs = require('fs');
 
 
 const app=express();
-const PORT=3001;
+const PORT=process.envPORT||3001;
 
 app.use(express.static('public'));
 app.use(express.json())
@@ -70,7 +70,7 @@ app.get('*',(req,res)=>{
 })
 
 app.listen(PORT,()=>{
-    console.log('Listening at http://localhost:3001')
+    console.log(`Listening at http://localhost`)
 })
 
 
