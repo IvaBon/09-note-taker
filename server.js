@@ -48,7 +48,7 @@ app.post('/api/notes',(req,res)=>{
     }
 })
 // trying to dealth the data
-app.delete('/notes/:id',(req,res)=>{
+app.delete('/api/notes/:id',(req,res)=>{
 
     fs.readFile(("./db/db.json"),"utf-8",function(err){
         err? console.log(err) : console.log('succes')
