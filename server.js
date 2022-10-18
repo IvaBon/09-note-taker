@@ -51,14 +51,14 @@ app.post('/api/notes',(req,res)=>{
 app.delete('/api/notes/:id',(req,res)=>{
 
     fs.readFile(("./db/db.json"),"utf-8",function(err){
-        err? console.log(err) : console.log('succes')
+        err? console.log(err) : console.log('success')
         
    
         const remove=need.filter(remove=>remove.id!==req.params.id)
 
         fs.writeFile('./db/db.json',JSON.stringify(remove),(err)=>{
             if(err) throw(err)
-            res.sendFile(path.join(__dirname,'/db/db.json'))
+            res.sendFile(path.join(__dirname,'./db/db.json'))
         })
     
     });      
