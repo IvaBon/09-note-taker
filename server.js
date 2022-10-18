@@ -54,14 +54,11 @@ app.delete('/api/notes/:id',(req,res)=>{
         err? console.log(err) : console.log('succes')
         
    
-        const remove=need.filter(task=>task.id!==req.params.id)
+        const remove=need.filter(remove=>remove.id!==req.params.id)
 
         fs.writeFile('./db/db.json',JSON.stringify(remove),(err)=>{
-            if(err){
-                res.status(400).json({msg:'error'})
-            } else{
-                res.status(200).json({msg:'success'})
-            }
+            if(err) throw(err)
+            res.sendFile(path.join(__dirname,'/db/db.json'))
         })
     
     });      
